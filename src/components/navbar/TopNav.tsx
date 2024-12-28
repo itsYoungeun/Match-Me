@@ -9,7 +9,7 @@ import {
   import { GiSelfLove } from "react-icons/gi";
   import NavLink from "./NavLink";
   
-  export default async function TopNav() {
+  export default function TopNav() {
     return (
         <Navbar
           maxWidth="full"
@@ -40,24 +40,28 @@ import {
                 label="Matches"
             />
             <NavLink href="/lists" label="Lists" />
+            <NavLink
+                href="/messages"
+                label="Messages"
+            />
             </NavbarContent>
             <NavbarContent justify="end">
-                <Button
+              <Button
                 as={Link}
                 href="/login"
                 variant="bordered"
                 className="text-white"
-                >
+              >
                 Login
-                </Button>
-                <Button
+              </Button>
+              <Button
                 as={Link}
                 href="/register"
                 variant="bordered"
                 className="text-white"
-                >
+              >
                 Register
-                </Button>
+              </Button>
             </NavbarContent>
         </Navbar>
     );
