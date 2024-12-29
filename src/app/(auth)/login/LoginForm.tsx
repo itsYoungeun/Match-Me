@@ -24,7 +24,7 @@ export default function LoginForm() {
     const onSubmit = (data: LoginSchema) => 
         console.log(data);
   return (
-    <Card className="w-2/5 mx-auto mt-20">
+    <Card className="w-2/5 mx-auto">
       <CardHeader className="flex flex-col items-center justify-center">
         <div className="flex flex-col gap-2 items-center text-default">
           <div className="flex flex-row items-center gap-3">
@@ -47,7 +47,7 @@ export default function LoginForm() {
               variant="bordered"
               {...register("email")}
               isInvalid={!!errors.email}
-              errorMessage={errors.email?.message as string}
+              errorMessage={errors.email?.message}
             />
             <Input
               defaultValue=""
@@ -56,7 +56,7 @@ export default function LoginForm() {
               type="password"
               {...register("password")}
               isInvalid={!!errors.password}
-              errorMessage={errors.password?.message as string}
+              errorMessage={errors.password?.message}
             />
             <Button
               fullWidth
