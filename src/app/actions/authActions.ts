@@ -5,17 +5,17 @@ import { prisma } from '@/lib/prisma';
 import { LoginSchema } from '@/lib/schemas/LoginSchema';
 import { registerSchema, RegisterSchema } from '@/lib/schemas/RegisterSchema';
 import { ActionResult } from '@/types';
+import { User } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import { AuthError } from 'next-auth';
 
 export async function signInUser(data: LoginSchema): Promise<ActionResult<string>> {
     try {
-        const result = await signIn('credentials', {
+        await signIn('credentials', {
             email: data.email,
             password: data.password
             redirect: false
         });
-        console.log(result);
 
         return { status: 'success', data: 'Logged in' }
     } catch (error) {
